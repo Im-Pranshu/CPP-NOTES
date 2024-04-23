@@ -1,14 +1,11 @@
-2 4 6 10 14 18 
-Mid : 2
-arr[mid] < key = 6 < 15
-Neglecting Left Part
-10 14 18 
-Mid : 4
-arr[mid] < key = 14 < 15
-Neglecting Left Part
-18 
-Mid : 5
-arr[mid] > key = 18 > 15
-Neglecting Right Part
+Head Insertion : 10 
+Head Insertion : 14 10 
+Head Insertion : 19 14 10 
+Tail Insertion : 19 14 10 8 
+Tail Insertion : 19 14 10 8 13 
+Tail Insertion : 19 14 10 8 13 25 
 
-not found
+Present Tail : 25
+Insertion at Position 1 : 11 19 14 10 8 13 25 
+Insertion at Position 4 : 11 19 14 5 10 8 13 25 
+Insertion at Position 7 : 11 19 14 5 10 8 21 13 25 

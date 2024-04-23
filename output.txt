@@ -1,11 +1,8 @@
 Head Insertion : 10 
 Head Insertion : 14 10 
 Head Insertion : 19 14 10 
-Tail Insertion : 19 14 10 8 
-Tail Insertion : 19 14 10 8 13 
-Tail Insertion : 19 14 10 8 13 25 
-
-Present Tail : 25
-Insertion at Position 1 : 11 19 14 10 8 13 25 
-Insertion at Position 4 : 11 19 14 5 10 8 13 25 
-Insertion at Position 7 : 11 19 14 5 10 8 21 13 25 
+Head Insertion : 24 19 14 10 
+Head Insertion : 12 24 19 14 10 
+Head : 12
+Memory of freed for Deleted Node : 12
+24 19 14 10 

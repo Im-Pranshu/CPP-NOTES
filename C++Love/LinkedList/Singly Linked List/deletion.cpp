@@ -108,7 +108,7 @@ int main()
     cout << "Head : " << head->data << endl;
 
     // Delete Node
-    deleteNode(head,1);
+    deleteNode(head,5);
     print(head);
     
     return 0;

@@ -4,5 +4,10 @@ Head Insertion : 19 14 10
 Head Insertion : 24 19 14 10 
 Head Insertion : 12 24 19 14 10 
 Head : 12
-Memory of freed for Deleted Node : 12
-24 19 14 10 
+Count : 1
+Count : 2
+Count : 3
+Count : 4
+Final Count : 5
+Memory of freed for Deleted Node : 10
+12 24 19 14 

@@ -1,1 +1,3 @@
-21
+Kth bit of 25 : 0
+After setting Kth bit of 25 : 29
+After unsetting Kth bit of 25 : 25

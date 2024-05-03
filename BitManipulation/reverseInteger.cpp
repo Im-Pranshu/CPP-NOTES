@@ -1,4 +1,6 @@
+#include<iostream>
 #include<limits.h>
+using namespace std;
 
 class Solution {
 public:
@@ -20,3 +22,13 @@ public:
         return ans;
     }
 };
+
+int main(){
+    int x;
+    cin >> x;
+
+    // create object of Class Solution.
+    Solution s;
+    // called funcion class.
+    cout << s.reverse(x);
+}

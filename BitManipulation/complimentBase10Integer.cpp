@@ -1,3 +1,6 @@
+#include<iostream>
+using namespace std;
+
 class Solution {
 public:
     int bitwiseComplement(int n) {
@@ -19,3 +22,16 @@ public:
         
     }
 };
+
+int main(){
+
+    int n;
+    cin >> n;
+
+    // create object of solution using pointer
+    Solution* s = new Solution();
+
+    // print answer.
+    cout << s->bitwiseComplement(n);
+    
+}

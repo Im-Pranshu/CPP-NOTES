@@ -1,3 +1,5 @@
-Kth bit of 25 : 0
-After setting Kth bit of 25 : 29
-After unsetting Kth bit of 25 : 25
+3 
+3 5 
+3 5 7 
+Memory is free for deleted node with data 3
+5 7 

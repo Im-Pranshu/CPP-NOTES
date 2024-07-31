@@ -150,7 +150,6 @@ bool detectLoop(Node* head) {
 
 }
 
-
 int main() {
 
     Node* tail = NULL;

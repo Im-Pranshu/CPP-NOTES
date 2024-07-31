@@ -222,6 +222,33 @@ void removeLoop(Node* head) {
 
 }
 
+// Remove Duplicates from sorted linked list.
+Node *removeDuplicates(Node *head)
+{
+    if(head == NULL) return head;
+    Node* curr = head;
+    while(curr != NULL){
+        Node* prev = curr;
+        Node* temp = curr -> next;
+        while(temp != NULL){
+            if(curr->data == temp->data){
+                prev->next = temp->next;
+                Node* to_delete = temp; // Store the node to be deleted
+                delete to_delete;
+                temp = prev;// point temp to prev because outside if it'll be further moved to next node.
+            }
+            else{
+                // if not deleted any node then move prev to next node
+                prev = temp;
+            }
+            // move temp to next node.
+            temp = temp->next;
+        }
+        curr = curr->next;
+    }
+    return head;
+}
+
 
 int main() {
     

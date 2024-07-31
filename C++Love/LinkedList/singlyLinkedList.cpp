@@ -249,6 +249,40 @@ Node *removeDuplicates(Node *head)
     return head;
 }
 
+// Remove Duplicates from un-sorted linked list.
+Node *removeDuplicates(Node *head)
+{
+    if(head == NULL) return head;
+
+    // this will store the status of nodes which are visited.
+    unordered_map<int, bool> visited;
+    // iterator of node to be deleted
+    Node* curr = head;
+    // points to previous node of the node to be deleted.
+    Node* prev = nullptr;
+
+    // keep traversng until null is arrived.
+    while (curr != nullptr) {
+        
+        // if found the node with same data again then delete it.
+        if (visited[curr->data] == true) {
+            prev->next = curr->next;
+            delete curr;
+            curr = prev;
+        }else// found new node then update that it's also visited.
+        {
+            visited[curr->data] = true;
+            prev = curr;
+        }
+        // whether deleted or node move current to next 
+        // as even if deleted it'll be pointing to prev node.
+        // if not deleted then definately we have to check next node.
+        curr = curr->next;     
+    }
+
+    return head;
+}
+
 
 int main() {
     

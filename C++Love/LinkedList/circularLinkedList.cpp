@@ -53,13 +53,13 @@ void insertNode(Node* &tail, int element, int d) {
 
 void print(Node* tail) {
 
-    Node* temp = tail;
-
     //empty list
     if(tail == NULL) {
         cout << "List is Empty "<< endl;
         return ;
     }
+
+    Node* temp = tail;
 
     do {
         cout << tail -> data << " ";
@@ -164,16 +164,17 @@ int main() {
     insertNode(tail, 5, 7);
     print(tail);
 
-    deleteNode(tail, 3);
-    print(tail);
-
-/*
-    
     insertNode(tail, 7, 9);
     print(tail);
 
     insertNode(tail, 5, 6);
     print(tail);
+
+    deleteNode(tail, 3);
+    print(tail);
+
+/*
+    
     
     insertNode(tail, 9, 10);
     print(tail);
@@ -185,10 +186,10 @@ int main() {
      */
 
     /*
+    else{
     if(isCircularList(tail)) {
         cout << " Linked List is Circular in nature" << endl;
     }
-    else{
         cout << "Linked List is not Circular " << endl;
     }
     */

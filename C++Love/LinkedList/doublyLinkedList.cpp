@@ -14,6 +14,7 @@ class Node {
         this->next = NULL;
     }
 
+    // destructor
     ~Node() {
         int val = this -> data;
         if(next != NULL) {
@@ -47,16 +48,16 @@ int getLength(Node* head) {
 
     return len;
 }
+
 void insertAtHead(Node* &tail, Node* &head, int d) {
 
+    Node* temp = new Node(d);
     //empty list
     if(head == NULL) {
-        Node* temp = new Node(d);
         head = temp;
         tail = temp;
     }
     else{
-        Node* temp = new Node(d);
         temp -> next = head;
         head -> prev = temp;
         head = temp;
@@ -66,13 +67,12 @@ void insertAtHead(Node* &tail, Node* &head, int d) {
 
 
 void insertAtTail(Node* &tail,Node* &head, int d) {
+    Node* temp = new Node(d);
     if(tail == NULL) {
-        Node* temp = new Node(d);
         tail = temp;
         head = temp;
     }
     else{
-        Node* temp = new Node(d);
         tail -> next  = temp;
         temp -> prev = tail;
         tail = temp;
@@ -88,9 +88,12 @@ void insertAtPosition(Node* & tail, Node* &head, int position, int d) {
         return;
     }
 
+
+    // temp pointer to point to the position-1 node
     Node* temp  = head;
     int cnt = 1;
 
+    // move temp to position-1.
     while(cnt < position-1) {
         temp = temp->next;
         cnt++;
@@ -116,33 +119,57 @@ void deleteNode(int position, Node* & head) {
     //deleting first or start node
     if(position == 1) {
         Node* temp = head;
-        temp -> next -> prev = NULL;
         head = temp ->next;
+
+        // if list has only one node then it won't execute
+        if(head != NULL) {
+            head -> prev = NULL;
+        }
+
         temp -> next = NULL;
         delete temp;
     }
     else
     {
         //deleting any middle node or last node
-        Node* curr = head;
-        Node* prev = NULL;
+        Node* current = head;
+        Node* previous = NULL;
 
         int cnt = 1;
         while(cnt < position) {
-            prev = curr;
-            curr = curr -> next;
+            previous = current;
+            current = current -> next;
             cnt++;
         }
 
-        curr -> prev = NULL;
-        prev -> next = curr -> next;
-        curr -> next = NULL;
+        current -> prev = NULL;
+        previous -> next = current -> next;
+        current -> next = NULL;
 
-        delete curr;
+        delete current;
 
     }
 }
 
+Node* reverseDoublyLinkedList(Node* head){
+    if(head == nullptr || head->next == nullptr)
+        return head;
+    else{
+        Node* previousNode = NULL;
+        Node* currentNode = head;
+        Node* forwardNode = currentNode->next;
+
+        while(currentNode != nullptr){
+            forwardNode = currentNode->next;
+            currentNode->next = previousNode;
+            currentNode->prev = forwardNode;
+            previousNode = currentNode;
+            currentNode = forwardNode;
+        }
+
+        return previousNode;
+    }
+}
 
 
 int main() {
@@ -190,14 +217,15 @@ int main() {
     cout << "head  " << head -> data << endl;
     cout << "tail  " << tail -> data << endl;
 
-    deleteNode(7, head);
+    // deleteNode(7, head);
+    // print(head);
+    // cout << "head  " << head -> data << endl;
+    // cout << "tail  " << tail -> data << endl;
+
+    head = reverseDoublyLinkedList(head);
     print(head);
     cout << "head  " << head -> data << endl;
     cout << "tail  " << tail -> data << endl;
-
-
-
-
 
     return 0;
 }

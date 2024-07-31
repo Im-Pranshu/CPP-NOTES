@@ -32,7 +32,7 @@ void insertAtHead(Node* &head , int data)// here &head is taken because we want 
 }
 
 void deleteNode(Node * &head , int position){
-    // if head is deleting 1st node
+    // Deleting 1st node
     if(position==1){
         // store currentNode which is to be deleted.
         Node* currentNode = head;
@@ -43,7 +43,7 @@ void deleteNode(Node * &head , int position){
         // memory free
         delete currentNode;
     }
-    else // Delete value at any position or end of the list
+    else // Delete value at any position or last node of the list
     {
         Node * prevNode = NULL;
         Node * currentNode = head;

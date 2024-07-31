@@ -22,10 +22,18 @@ void insertAtHead(Node* &head , int data)// here &head is taken because we want 
     head = temp;
 }
 
-void insertAtTail(Node* &tail , int data)// here &head is taken because we want to edit the original linkedList don't want to make a copy of the old linked list.
+void insertAtTail(Node* &head, Node* &tail , int data)// here &head is taken because we want to edit the original linkedList don't want to make a copy of the old linked list.
 {
     // new node create
     Node * temp = new Node(data);
+
+    // if linked list is empty
+    if(tail == nullptr){
+        tail = temp;
+        head = temp;
+        return;
+    }
+
     // store address of head node in temp node address part.
     tail -> next = temp;
     // point head to new node.
@@ -39,6 +47,7 @@ void insertAtPosition(Node* &head, Node* &tail , int position , int data){
         return;
     }
 
+    // node counter to reach till position-1 node
     Node* temp = head;
     // we're assuming that it has atleast one node in the linked list that's why count is 1.
     int cnt = 1; 
@@ -56,7 +65,7 @@ void insertAtPosition(Node* &head, Node* &tail , int position , int data){
 
     // inserting at the last position
     if(temp->next == NULL){
-        insertAtTail(tail,data);
+        insertAtTail(head,tail,data);
         return;
     }
 
@@ -82,15 +91,15 @@ void print(Node* &head ){
 
 int main()
 {
-    // create new node.
+    // create new node manually
     // Node *node1 = new Node(10);
     // head pointed to node1.
-     // Node * head = node1;
+    // Node * head = node1;
 
     // intially LL has 0 nodes so head is NULL.
     Node * head = NULL;
 
-// ********Insert AT Position*****************
+// ********Insert AT Head*****************
     insertAtHead(head,10);
     cout << "Head Insertion : ";
     print(head);
@@ -103,7 +112,7 @@ int main()
     cout << "Head Insertion : ";
     print(head);
 
-    // finding tail
+// ******finding tail******
     Node* tail = NULL;
     Node* temp = head;
     while(temp != NULL){
@@ -113,17 +122,19 @@ int main()
         // check loop condition if it's null or not.
         temp = temp -> next;
     }
+
+    cout << endl << "Present Head : " << head-> data << endl;
     
 // ********Insert AT Tail**********
-    insertAtTail(tail,8);
+    insertAtTail(head,tail,8);
+    cout << endl << "Tail Insertion : ";
+    print(head);
+
+    insertAtTail(head,tail,13);
     cout << "Tail Insertion : ";
     print(head);
 
-    insertAtTail(tail,13);
-    cout << "Tail Insertion : ";
-    print(head);
-
-    insertAtTail(tail,25);
+    insertAtTail(head,tail,25);
     cout << "Tail Insertion : ";
     print(head);
 
@@ -131,7 +142,7 @@ int main()
 
 // ********Insert AT Position*****************
     insertAtPosition(head, tail, 1 , 11);
-    cout << "Insertion at Position 1 : ";
+    cout << endl << "Insertion at Position 1 : ";
     print(head);
 
     insertAtPosition(head, tail, 4 , 5);
@@ -141,6 +152,10 @@ int main()
     insertAtPosition(head, tail, 7 , 21);
     cout << "Insertion at Position 7 : ";
     print(head);
+
+    cout << endl << "Present Head : " << head-> data << endl;
+
+    cout << endl << "Present Tail : " << tail-> data << endl;
 
     return 0;
 }

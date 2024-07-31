@@ -1,5 +1,25 @@
-3 
-3 5 
-3 5 7 
-Memory is free for deleted node with data 3
-5 7 
+
+11 
+head  11
+tail  11
+13 11 
+head  13
+tail  11
+8 13 11 
+head  8
+tail  11
+8 13 11 25 
+head  8
+tail  25
+8 100 13 11 25 
+head  8
+tail  25
+101 8 100 13 11 25 
+head  101
+tail  25
+101 8 100 13 11 25 102 
+head  101
+tail  102
+102 25 11 13 100 8 101 
+head  102
+tail  102

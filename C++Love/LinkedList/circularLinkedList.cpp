@@ -24,19 +24,19 @@ class Node {
 
 };
 
-void insertNode(Node* &tail, int element, int d) {
+void insertNode(Node* &head, int element, int d) {
     
     //empty list
-    if(tail == NULL) {
+    if(head == NULL) {
         Node* newNode = new Node(d);
-        tail = newNode;
+        head = newNode;
         newNode -> next = newNode;
     }
     else{
         //non-empty list
         //assuming that the element is present in the list
 
-        Node* curr = tail;
+        Node* curr = head;
 
         while(curr->data != element) {
             curr = curr -> next;
@@ -51,28 +51,28 @@ void insertNode(Node* &tail, int element, int d) {
 
 }    
 
-void print(Node* tail) {
+void print(Node* head) {
 
     //empty list
-    if(tail == NULL) {
+    if(head == NULL) {
         cout << "List is Empty "<< endl;
         return ;
     }
 
-    Node* temp = tail;
+    Node* temp = head;
 
     do {
-        cout << tail -> data << " ";
-        tail = tail -> next;
-    } while(tail != temp);
+        cout << head -> data << " ";
+        head = head -> next;
+    } while(head != temp);
 
     cout << endl;
 } 
 
-void deleteNode(Node* &tail, int value) {
+void deleteNode(Node* &head, int value) {
 
     //empty list
-    if(tail == NULL) {
+    if(head == NULL) {
         cout << " List is empty, please check again" << endl;
         return;
     }
@@ -80,7 +80,7 @@ void deleteNode(Node* &tail, int value) {
         //non-empty
  
         //assuming that "value" is present in the Linked List
-        Node* prev = tail;
+        Node* prev = head;
         Node* curr = prev -> next;
 
         while(curr -> data != value) {
@@ -92,12 +92,12 @@ void deleteNode(Node* &tail, int value) {
 
         //1 Node Linked List
         if(curr == prev) {
-            tail = NULL;
+            head = NULL;
         }
         //>=2 Node linked list
-        else if(tail == curr ) {
+        else if(head == curr ) {
             // kisi ko bhi point kara do matter nahi karta kuki circular linked list hai.
-            tail = prev->next;
+            head = prev->next;
         }
 
         curr -> next = NULL;
@@ -150,48 +150,85 @@ bool detectLoop(Node* head) {
 
 }
 
+int getListLenght(Node* head){
+    int cnt = 0;// store the no of nodes in LL
+    Node* temp = head->next;
+    // counting no of nodes assuming index as zero
+    while(temp != head){
+        cnt++;
+        temp = temp->next;
+    }
+    return cnt;
+}
+
+Node* splitList(Node* head){
+
+    int len = getListLenght(head);// length of list
+
+    int nodes = len/2+1; // finding half of the nodes.
+    // cout << "Half of Nodes : " << nodes << endl;
+
+    // reaching to the point from where to break.
+    Node* head2 = head;
+    for(int i=1; i<nodes; i++){
+        head2 = head2->next;
+    }
+
+    // store the new head
+    Node* temp = head2->next;
+
+    // make the 1st Splitted LL circular
+    head2->next = head;
+
+    // appoint head2 as head of 2nd List
+    head2 = temp;
+    // reaching the final node of 2nd List
+    while(temp->next != head){
+        temp = temp->next;
+    }
+    // connect last node of 2nd list to head2 to make it circular.
+    temp->next = head2;
+
+    return head2;
+}
+
 int main() {
 
-    Node* tail = NULL;
+    Node* head = NULL;
 
-    insertNode(tail, 0, 3);
-    print(tail);
+    insertNode(head, 0, 3);
+    insertNode(head, 3, 5);
+    insertNode(head, 5, 7);
+    insertNode(head, 7, 9);
+    insertNode(head, 5, 6);
+    insertNode(head, 6, 12);
+    insertNode(head, 5, 23);
+    print(head);
 
-    insertNode(tail, 3, 5);
-    print(tail);
+    // deleteNode(head, 3);
+    // print(head);
 
-    insertNode(tail, 5, 7);
-    print(tail);
+    // cout << isCircularList(head) << endl;
 
-    insertNode(tail, 7, 9);
-    print(tail);
+    // cout << detectLoop(head) << endl;
 
-    insertNode(tail, 5, 6);
-    print(tail);
+    // Splitting the CLL.
+    Node* head2 = splitList(head);
 
-    deleteNode(tail, 3);
-    print(tail);
+    cout << "First Splitted Linked List :- \t";
+    print(head);
 
-/*
-    
-    
-    insertNode(tail, 9, 10);
-    print(tail);
+    cout << "Second Splitted Linked List :- \t";
+    print(head2);
 
-    insertNode(tail, 3, 4);
-    print(tail);
-   
-
-     */
-
-    /*
-    else{
-    if(isCircularList(tail)) {
+/*  
+    if(isCircularList(head)) {
         cout << " Linked List is Circular in nature" << endl;
     }
+    else{
         cout << "Linked List is not Circular " << endl;
     }
-    */
+*/
 
     return 0;
 }

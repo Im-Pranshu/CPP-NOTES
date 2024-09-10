@@ -1,2 +1,4 @@
-3 7 0 1 5 8 3 2 34 66 87 23 12 12 12 
-Sorted Array : 0 0 3 7 626392520 134268208 2 1252 1985281434 50486 16385200 16389552 0 0 0 
+String Before Reverse 
+ jai shree ram
+String After Reverse 
+ iaj eerhs mar 

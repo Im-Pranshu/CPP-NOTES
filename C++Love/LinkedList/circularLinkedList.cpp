@@ -136,15 +136,12 @@ bool detectLoop(Node* head) {
     Node* temp = head;
 
     while(temp !=NULL) {
-
         //cycle is present
         if(visited[temp] == true) {
             return true;
         }
-
         visited[temp] = true;
         temp = temp -> next;
-
     }
     return false;
 

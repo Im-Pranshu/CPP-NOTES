@@ -1,4 +1,32 @@
-String Before Reverse 
- jai shree ram
-String After Reverse 
- iaj eerhs mar 
+Enter the data: 
+Enter data for inserting in left of 1
+Enter the data: 
+Enter data for inserting in left of 3
+Enter the data: 
+Enter data for inserting in left of 7
+Enter the data: 
+Enter data for inserting in right of 7
+Enter the data: 
+Enter data for inserting in right of 3
+Enter the data: 
+Enter data for inserting in left of 11
+Enter the data: 
+Enter data for inserting in right of 11
+Enter the data: 
+Enter data for inserting in right of 1
+Enter the data: 
+Enter data for inserting in left of 5
+Enter the data: 
+Enter data for inserting in left of 17
+Enter the data: 
+Enter data for inserting in right of 17
+Enter the data: 
+Enter data for inserting in right of 5
+Enter the data: 
+Printing the level order tracersal output 
+1 
+3 5 
+7 11 17 
+inorder traversal is:  7 3 11 1 17 5 
+preorder traversal is:  1 3 7 11 5 17 
+postorder traversal is:  7 11 3 17 5 1 

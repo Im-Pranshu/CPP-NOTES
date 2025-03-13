@@ -1,161 +1,234 @@
 #include <iostream>
 using namespace std;
 
-int main()
+void pattern1(int n)
 {
-    // Pattern Questions.
-    
-    // Pattern 1 : equal rows and col same thing printed
+    // Pattern 1 : equal rows and col same thing patterned
     // sample
     // * *
     // * *
-    // int n;
-    // cin>>n;
 
     // var for row
-    // int i = 1;
+    int i = 1;
 
-    // while (i<=n)
-    // {
-    //     // var for column
-    //     int j = 1;
-    //     while (j<=n)
-    //     {
-    //         cout<<"* ";
-    //         j++;
-    //     }
-    //     cout<<endl;
-    //     i++;
-    // }
-    
-    // Pattern 2 : equal rows and col 
+    while (i <= n)
+    {
+        // var for column
+        int j = 1;
+        while (j <= n)
+        {
+            cout << "* ";
+            j++;
+        }
+        cout << endl;
+        i++;
+    }
+}
+
+void pattern2(int n)
+{
+    // Pattern 2 : equal rows and col
     // sample
     // 1 1 1
     // 2 2 2
     // 3 3 3
-    // int n,i,j;
-    // cin>>n;
+    int i, j;
 
-    // i = 1;
-    // while(i<=n){
-    //     j = 1;
-    //     while(j<=n){
-    //         cout<<i<<" ";
-    //         j++;
-    //     }
-    //     cout<<endl;
-    //     i++;
-    // }
+    i = 1;
+    while (i <= n)
+    {
+        j = 1;
+        while (j <= n)
+        {
+            cout << i << " ";
+            j++;
+        }
+        cout << endl;
+        i++;
+    }
+}
 
+void pattern3(int n)
+{
     // Patter 3 - Sample :
     // 1 2 3
     // 1 2 3
     // 1 2 3
-    // int n,i,j;
-    // cin>>n;
-    // i = 1;
-    // while(i<=n){
-    //     j = 1;
-    //     while(j<=n){
-    //         cout<<j<<" ";
-    //         j++;
-    //     }
-    //     cout<<endl;
-    //     i++;
-    // }
+    int i, j;
 
+    i = 1;
+    while (i <= n)
+    {
+        j = 1;
+        while (j <= n)
+        {
+            cout << j << " ";
+            j++;
+        }
+        cout << endl;
+        i++;
+    }
+}
+
+void pattern4(int n)
+{
     // Pattern 4 - Sample:
     // 3 2 1
     // 3 2 1
     // 3 2 1
-    // int n,i,j;
-    // cin>>n;
-    // i = 1;
-    // while (i<=n)
-    // {
-    //     j = 1;
-    //     while(j<=n){
-    //         cout<<n-j+1<<" ";
-    //         j++;
-    //     }
-    //     cout<<endl;
-    //     i++;
-    // }
-    
-    // Pattern 5 
+    int i, j;
+
+    i = 1;
+    while (i <= n)
+    {
+        j = 1;
+        while (j <= n)
+        {
+            cout << n - j + 1 << " ";
+            j++;
+        }
+        cout << endl;
+        i++;
+    }
+}
+
+void pattern5(int n)
+{
+    // Pattern 5
     // 1 2 3
     // 4 5 6
     // 7 8 9
-    // int n,i,j,count;
-    // cin>>n;
-    // i = 1;
-    // count = 1;
-    // while(i<=n){
-    //     j = 1;
-    //     while(j<=n){
-    //         cout<<count<<" ";
-    //         count++;
-    //         j++;
-    //     }
-    //     cout<<endl;
-    //     i++;
-    // }
+    int i, j, count;
 
+    i = 1;
+    count = 1;
+    while (i <= n)
+    {
+        j = 1;
+        while (j <= n)
+        {
+            cout << count << " ";
+            count++;
+            j++;
+        }
+        cout << endl;
+        i++;
+    }
+}
+
+void pattern6(int n)
+{
     // Pattern 6
     // *
     // * *
     // * * *
     // * * * *
-    // int n,i,j;
-    // cin>>n;
-    // i = 1;
-    // while(i<=n){
-    //     j = 1;
-    //     while(j<=i){
-    //         cout<<"* ";
-    //         j++;
-    //     }
-    //     cout<<endl;
-    //     i++;
-    // }
+    int i, j;
 
+    i = 1;
+    while (i <= n)
+    {
+        j = 1;
+        while (j <= i)
+        {
+            cout << "* ";
+            j++;
+        }
+        cout << endl;
+        i++;
+    }
+}
+
+void pattern7(int n)
+{
     // Pattern 7
     // 1
     // 2 2
     // 3 3 3
     // 4 4 4 4
-    // int i,j,n;
-    // cin>>n;
-    // i = 1;
-    // while(i<=n){
-    //     j = 1;
-    //     while(j<=i){
-    //         cout<<i<<" ";
-    //         j++;
-    //     }
-    //     cout<<endl;
-    //     i++;
-    // }
+    int i, j;
 
+    i = 1;
+    while (i <= n)
+    {
+        j = 1;
+        while (j <= i)
+        {
+            cout << i << " ";
+            j++;
+        }
+        cout << endl;
+        i++;
+    }
+}
+
+void pattern8(int n)
+{
     // Pattern 8
     // 1
     // 2 3
     // 4 5 6
     // 7 8 9 10
-    // int i,j,n,count;
-    // cin>>n;
-    // i = 1;
-    // count = 1;
-    // while(i<=n){
-    //     j = 1;
-    //     while(j<=i){
-    //         cout<<count<<" ";
-    //         count++;
-    //         j++;
-    //     }
-    //     cout<<endl;
-    //     i++;
-    // }
+    int i, j, count;
+
+    i = 1;
+    count = 1;
+    while (i <= n)
+    {
+        j = 1;
+        while (j <= i)
+        {
+            cout << count << " ";
+            count++;
+            j++;
+        }
+        cout << endl;
+        i++;
+    }
+}
+
+// pattern 28
+//     *
+//    ***
+//   *****
+//  *******
+void pattern28(int n)
+{
+
+    for (int i = 0; i < n; i++)
+    {
+        // space
+        for (int j = 0; j < n - i; j++)
+        {
+            cout << " ";
+        }
+
+        // stars
+        for (int k = 0; k < 2 * i - 1; k++)
+        {
+            cout << "*";
+        }
+
+        // space
+        for (int j = 0; j < n - i; j++)
+        {
+            cout << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main()
+{
+
+    // Pattern Questions.
+    int n;
+    cin >> n;
+
+    // pattern1(n);
+    // pattern2(n);
+    // pattern3(n);
+    pattern28(n);
 
     // Pattern 9
     // 1
@@ -187,7 +260,7 @@ int main()
     //         cout<<j<<" ";// 1  ,    2 3   ,    3 4 5
     //         j++;         //2(LB),  3 4(LB) ,    4 5(Loop Breaks)
     //     }
-    //     cout<<endl;  
+    //     cout<<endl;
     //     i++; //           2    ,     3    ,     4(Loop breaks)
     // }
 
@@ -285,7 +358,7 @@ int main()
     //     cout<<endl;
     //     i++;
     // }
-    
+
     // Problem 14 Approach 2 using approach of pattern 18
     // A B C
     // B C D
@@ -327,7 +400,7 @@ int main()
 
     // Pattern 16
     // A
-    // B C 
+    // B C
     // D E F
     // G H I J
     // int n,i,j;
@@ -411,7 +484,7 @@ int main()
     //     cout<<endl;
     //     i++;
     // }
-    
+
     // Pattern 20
     // * * * *
     // * * *
@@ -457,7 +530,7 @@ int main()
 
     // Pattern 22
     // 1 1 1 1
-    //   2 2 2 
+    //   2 2 2
     //     3 3
     //       4
     // int i , j , n, spaces;
@@ -485,7 +558,7 @@ int main()
 
     // Pattern 23
     //       1
-    //     2 2 
+    //     2 2
     //   3 3 3
     // 4 4 4 4
     // int i , j , n, spaces;
@@ -513,7 +586,7 @@ int main()
 
     // Pattern 24
     //       1
-    //     2 3 
+    //     2 3
     //   4 5 6
     // 7 8 9 10
     // int i , j , n, spaces,value;
@@ -571,7 +644,7 @@ int main()
 
     // Pattern 25
     //       1
-    //     1 2 1 
+    //     1 2 1
     //   1 2 3 2 1
     // 1 2 3 4 3 2 1
     // int i,j,n,spaces,start;
@@ -650,6 +723,4 @@ int main()
     //     cout<<endl;
     //     i++;
     // }
-    
-    
 }

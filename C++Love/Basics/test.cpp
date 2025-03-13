@@ -2,7 +2,8 @@
 #include <climits>
 using namespace std;
 
-int main(){
+int main()
+{
     // int n = 123,rev = 0;
     // int temp;
     // // reversing the number.
@@ -21,4 +22,23 @@ int main(){
     //     temp = temp / 10;
     // }
     // cout<<INT_MAX<<endl;
+
+    // int count = i;
+    // char ch = 'A';
+    for (int i = 1; i <= 4; i++)
+    {
+        // print space
+        for (int j = 1; j <= 4 - i; j++)
+        {
+            cout << "  ";
+        }
+
+        // print star
+        for (int j = 1; j <= 4 * 2 - 1; j++)
+        {
+            cout << "*" << " ";
+        }
+
+        cout << endl;
+    }
 }

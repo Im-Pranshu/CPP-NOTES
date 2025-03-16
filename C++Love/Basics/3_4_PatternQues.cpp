@@ -218,6 +218,128 @@ void pattern28(int n)
     }
 }
 
+// Pattern 29
+// 1
+// 0 1
+// 1 0 1
+// 0 1 0 1
+void pattern29(int n)
+{
+    int bit = 1;
+    for (int i = 1; i <= n; i++)
+    {
+        // flip bits as even row or odd row
+        i % 2 == 0 ? bit = 0 : bit = 1;
+        for (int j = 1; j <= i; j++)
+        {
+            cout << bit << " ";
+            // flip bits in each iteration
+            bit = 1 - bit;
+        }
+        cout << endl;
+    }
+}
+
+// Pattern 30
+// 1             1
+// 1 2         2 1
+// 1 2 3     3 2 1
+// 1 2 3 4 4 3 2 1
+void pattern30(int n)
+{
+    // for 2nd way of space print
+    // int space = 2 * (n - 1);
+
+    for (int i = 1; i <= n; i++)
+    {
+        // no. pattern 1
+        for (int j = 1; j <= i; j++)
+        {
+            cout << j << " ";
+        }
+
+        // better way
+        // spaces - 2*(n-i) bcz 2 bar same pattern print kardo that's it
+        for (int j = 1; j <= 2 * (n - i); j++)
+        {
+            cout << "  ";
+        }
+
+        // // another way of space print
+        // for (int j = 0; j < space; j++)
+        // {
+        //     cout << "  ";
+        // }
+
+        // no. pattern 2
+        for (int j = i; j >= 1; j--)
+        {
+            cout << j << " ";
+        }
+        cout << endl;
+        // space -= 2;
+    }
+}
+
+// Pattern 31
+//     A
+//   A B A
+// A B C B A
+void pattern31(int n)
+{
+    for (int i = 1; i <= n; i++)
+    {
+        // space
+        for (int j = 1; j <= n - i; j++)
+        {
+            cout << "  ";
+        }
+
+        // stars
+        char ch = 'A';
+        // symmetry breaks here - now decrement char
+        int breakpoint = (2 * i - 1) / 2;
+        for (int j = 1; j <= 2 * i - 1; j++)
+        {
+            cout << ch << " ";
+            // if break symmetry then decrement.
+            (j <= breakpoint) ? ch++ : ch--;
+        }
+        cout << endl;
+    }
+}
+
+// Pattern 32
+// E
+// D E
+// C D E
+// B C D E
+// A B C D E
+void pattern32(int n)
+{
+    for (int i = 1; i <= n; i++)
+    {
+        char ch = 'A' + n - i; // A + 4 - 1 = E
+        for (int j = 1; j <= i; j++)
+        {
+            cout << ch << " ";
+            ch++;
+        }
+        cout << endl;
+    }
+}
+
+// Pattern 33
+// * * * * * *
+// * *     * *
+// *         *
+// *         *
+// * *     * *
+// * * * * * *
+void pattern33(int n)
+{
+}
+
 int main()
 {
 
@@ -228,7 +350,7 @@ int main()
     // pattern1(n);
     // pattern2(n);
     // pattern3(n);
-    pattern28(n);
+    pattern32(n);
 
     // Pattern 9
     // 1
